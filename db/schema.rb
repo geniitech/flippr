@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516084013) do
+ActiveRecord::Schema.define(version: 20150516115122) do
 
   create_table "pages", force: :cascade do |t|
     t.string   "url",         limit: 255
@@ -34,6 +34,28 @@ ActiveRecord::Schema.define(version: 20150516084013) do
 
   add_index "projects", ["title"], name: "index_projects_on_title", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
+  create_table "snapshot_data", force: :cascade do |t|
+    t.integer  "snapshot_id", limit: 4
+    t.text     "data",        limit: 65535
+    t.string   "statusCode",  limit: 255
+    t.string   "statusText",  limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "snapshot_data", ["snapshot_id"], name: "index_snapshot_data_on_snapshot_id", using: :btree
+
+  create_table "snapshots", force: :cascade do |t|
+    t.string   "statusCode", limit: 255
+    t.string   "statusText", limit: 255
+    t.text     "data",       limit: 65535
+    t.integer  "page_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "snapshots", ["page_id"], name: "index_snapshots_on_page_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

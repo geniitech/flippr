@@ -10,7 +10,9 @@ module WebPageTestAPI
     end
 
     def run_test
-      self.class.get('/runtest.php', options)
+      response = self.class.get('/runtest.php', options)
+      parsed_response = response # TODO: Response parser
+      snapshot = Snapshot.create(parsed_response)
     end
   end
 end

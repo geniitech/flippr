@@ -12,6 +12,13 @@
 #
 
 class Page < ActiveRecord::Base
+  include WebPageTestAPI
   belongs_to :project
+  has_many :snapshots, dependent: :destroy
+
   validates_presence_of :url, :title, :project_id
+
+  def send_test_request
+    WebPageTestAPI::TestRequest.new(self.url).run_test
+  end
 end
