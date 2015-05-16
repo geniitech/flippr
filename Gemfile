@@ -16,11 +16,14 @@ gem "simple_form"
 
 group :development do
   gem "better_errors"
-  gem "capistrano", "~> 3.0.1"
+  gem "capistrano", "~> 3.3.1"
   gem "capistrano-bundler"
   gem "capistrano-rails", "~> 1.1.0"
   gem "capistrano-rails-console"
   gem 'capistrano-passenger'
+  gem 'capistrano-db-tasks'
+  gem 'capistrano-rails-collection'
+  gem 'capistrano-secrets-yml'
   gem "capistrano-rvm", "~> 0.1.1"
   gem "guard-bundler"
   gem "guard-rails"
