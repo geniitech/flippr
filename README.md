@@ -1,8 +1,7 @@
 Flippr
 ================
 
-Ruby on Rails
--------------
+Flippr is a Frontend Performance Monitoring tool.
 
 This application requires:
 
@@ -35,40 +34,40 @@ rake db:migrate
 ```
 
 ### Cautions
-- **database.yml**, **secrets.yml** config files are ignore from the version control and a new developer is expected to obtain it from an existing developer or from any of the server instances.
+- **database.yml**, **secrets.yml** config files are ignored from the version control and a new developer is expected to obtain it from an existing developer or from any of the server instances.
 
 Branch History
 --------------
 
-**master** is the stable release branch, which is used to maintain the *production ready codebase*.
+- **master** is the stable release branch, which is used to maintain the *production ready codebase*.
 
-**staging** is the edge release branch, which is primarily used to maintain the *staging ready codebase*.
+- **release** is the edge release branch, which is primarily used to maintain the *staging ready codebase*.
+- **develop** is the integration branch.
 
-**name** branches are for individual developers, who are supposed to push a final commit for the day for the code manager to do a day end merge push to the staging branch.
+To know more about branch structure read the instructions in the [contributor guidelines](CONTRIBUTING.md).
 
 Deployment details
 ------------------
 
 **Capistrano v3** is being used as the deployment automation tool.
 
-Changes need to go to the staging branch first to be deployed to the staging instance. After testing and approval, staging branch needs to be merged with the master branch for production deployment.
+Changes need to go to the develop branch first to be deployed to the staging instance. After testing and approval, develop branch needs to be merged with the master branch for production deployment.
 
 Staging server details
 ----------------------
 
-- **IP:** 
+- **IP:**
 
-- **Username:** 
+- **Username:**
 
-- **Branch:** staging
+- **Branch:** develop
 
 
 Production server details
 -------------------------
 
-- **IP:** 
+- **IP:**
 
-- **Username:** 
+- **Username:**
 
 - **Branch:** master
-
