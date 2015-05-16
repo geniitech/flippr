@@ -47,6 +47,7 @@ GEM
     autoprefixer-rails (5.1.11)
       execjs
       json
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -155,6 +156,9 @@ GEM
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    httparty (0.13.4)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     hub (1.12.4)
     i18n (0.7.0)
     jbuilder (2.2.13)
@@ -181,6 +185,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.6.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
@@ -332,6 +337,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.6.0)
+  awesome_print
   better_errors
   bootstrap-sass
   byebug
@@ -352,6 +358,7 @@ DEPENDENCIES
   guard-rspec
   haml-rails
   html2haml
+  httparty
   hub
   jbuilder (~> 2.0)
   jquery-rails

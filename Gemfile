@@ -13,6 +13,8 @@ gem "devise"
 gem "haml-rails"
 gem "mysql2"
 gem "simple_form"
+gem "httparty"
+gem "awesome_print"
 
 group :development do
   gem "better_errors"
