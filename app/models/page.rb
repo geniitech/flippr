@@ -12,5 +12,6 @@
 #
 
 class Page < ActiveRecord::Base
-  validates_presence_of :url, :title
+  belongs_to :project
+  validates_presence_of :url, :title, :project_id
 end

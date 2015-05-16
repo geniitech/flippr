@@ -5,7 +5,7 @@
     = f.input :url
     = f.input :title
     = f.input :description
-    = f.input :project_id
+    = f.association :project, include_blank: false
 
   .form-actions
     = f.button :submit

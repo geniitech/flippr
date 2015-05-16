@@ -11,7 +11,7 @@
   = @page.description
 %p
   %b Project:
-  = @page.project_id
+  = @page.project.title rescue nil
 
 = link_to 'Edit', edit_page_path(@page)
 \|
