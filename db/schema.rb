@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516074637) do
+ActiveRecord::Schema.define(version: 20150516084013) do
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "url",         limit: 255
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.integer  "project_id",  limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "pages", ["project_id"], name: "index_pages_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
