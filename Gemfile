@@ -34,6 +34,7 @@ group :development do
   gem "spring-commands-rspec"
   # To annotate only models: annotate --exclude tests,fixtures,factories
   gem "annotate", ">=2.6.0"
+  gem "erb2haml"
 end
 
 group :development, :test do

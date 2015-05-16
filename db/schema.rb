@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150516084013) do
 
   add_index "pages", ["project_id"], name: "index_pages_on_project_id", using: :btree
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "projects", ["title"], name: "index_projects_on_title", using: :btree
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
